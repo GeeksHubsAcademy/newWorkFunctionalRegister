@@ -2,6 +2,8 @@
 //useState is for Hooks and useEffect is for the lifecycle functions
 import React, {useState, useEffect} from 'react';
 
+import { errorVerify } from '../../useful';
+
 
 import "./Register.css";
 
@@ -33,34 +35,14 @@ const Register = () => {
     //Functions....
 
     const registerMe = () => {
-
-        setMsgError("");
+        console.log("booooooooooooooooo")
+        // let foundError = false;
+        // setMsgError("");
 
         //We validate the actual data on inputs/hooks
-
-        //Text only
-        if (! /[a-z]/gi.test(user.name) ) {
-            setMsgError("Invalid name");
-            return;
-        };
+        // foundError = errorVerify();
         
-        if (! /[\d()+-]/g.test(user.phone) ) {
-            setMsgError("Invalid phone");
-            return;
-        };
-
-        if (! /[\d()+-]/g.test(user.password) ) {
-            setMsgError("Invalid password");
-            return;
-        };
-
-        //Email
-        if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(user.email) ) {
-            
-            setMsgError("Invalid e-mail format");
-            
-            return;
-        };
+        
         
         //We would send the data to the backend using axios (for example)
 
@@ -73,7 +55,7 @@ const Register = () => {
             <div className="upSection">
                 <input className="myInput" type="text" name="name" id="name" title="name"
                     placeholder="Name:" autoComplete="off"
-                    onChange={(e) => { handleData(e) }} />
+                    onChange={(e) => { handleData(e) }} onBlur={(ev)=>errorVerify("string",ev.target.value)}/>
 
                 <input className="myInput" type="email" name="email" id="email" title="email"
                     placeholder="E-mail:" autoComplete="off"
