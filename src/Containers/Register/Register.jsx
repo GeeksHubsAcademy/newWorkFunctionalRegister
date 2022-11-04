@@ -22,7 +22,11 @@ const Register = () => {
 
     const handleData = (e) => {
         //In this case, we are creating a handler to bind inputs on a functional component
-        setUser({...user, [e.target.name]: e.target.value})
+        
+        setUser((prevState) => ({
+            ...prevState, [e.target.name]: e.target.value
+            
+        }));
                             
     };
 
