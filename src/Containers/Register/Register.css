@@ -1,0 +1,55 @@
+
+.registerDesign {
+
+    height: 26em;
+
+    width: 100vw;
+
+    background-color:honeydew;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upSection {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.myInput {
+    margin-right: 1em;
+}
+
+.designRegisterButton {
+
+    height: 2em;
+    width: 8em;
+
+    background-color: crimson;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    border-radius: 1em;
+
+    margin-top: 1em;
+
+    cursor: pointer;
+}
+
+.designRegisterButton:hover {
+
+    background-color: darkred;
+
+    transition: 0.3s;
+}
